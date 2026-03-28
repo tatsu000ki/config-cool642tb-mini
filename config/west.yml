@@ -2,16 +2,20 @@ manifest:
   remotes:  
     - name: zmkfirmware  
       url-base: https://github.com/zmkfirmware  
+    - name: your-existing-remote
+      url-base: https://github.com/your-existing-remote  
     - name: na-ka-no
       url-base: https://github.com/na-ka-no
     - name: yamaryu211
       url-base: https://github.com/yamaryu211
   projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
     - name: zmk-input-processor-temp-layer-threshold
       remote: yamaryu211
       revision: main
-  
-  projects:  
     - name: zmk
       remote: na-ka-no  # フォークしたリポジトリを参照  
       revision: for-cool642tb_mini  # カスタムブランチ名  
