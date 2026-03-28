@@ -9,10 +9,6 @@ manifest:
     - name: yamaryu211
       url-base: https://github.com/yamaryu211
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
     - name: zmk-input-processor-temp-layer-threshold
       remote: yamaryu211
       revision: main
