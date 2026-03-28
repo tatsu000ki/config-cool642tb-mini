@@ -16,14 +16,11 @@
 };
 
 / {
-    trackball_listener {
-        status = "okay";
+    trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };
-};
 
-/ {
     aml_threshold: aml_threshold {
         compatible = "zmk,input-processor-temp-layer-threshold";
         #input-processor-cells = <2>;
