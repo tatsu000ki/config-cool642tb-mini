@@ -1,3 +1,5 @@
+#error TEST_KEYMAP_IS_BEING_READ
+
 #define AML 4
 #define SCROLL 5
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
