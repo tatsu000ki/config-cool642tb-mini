@@ -13,8 +13,6 @@
     quick-tap-ms = <0>;
 };
 
-&trackball { scroll-layers = <5>; };
-
 / {
     combos {
         compatible = "zmk,combos";
