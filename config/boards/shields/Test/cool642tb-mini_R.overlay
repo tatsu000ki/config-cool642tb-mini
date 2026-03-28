@@ -17,18 +17,9 @@
 
 / {
     trackball_listener: trackball_listener {
+        status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-    };
-
-    aml_threshold: aml_threshold {
-        compatible = "zmk,input-processor-temp-layer-threshold";
-        #input-processor-cells = <2>;
-
-        threshold = <20>;
-        reset-timeout-ms = <200>;
-        require-prior-idle-ms = <200>;
-        excluded-positions = <8 9 18 19 20 10 22 34>;
     };
 };
 
@@ -51,7 +42,9 @@
     };
 };
 
-&xiao_serial { status = "disabled"; };
+&xiao_serial {
+    status = "disabled";
+};
 
 &spi0 {
     status = "okay";
@@ -72,13 +65,10 @@
 
 /* トラボ動作でMOUSE(=4)を一定時間有効化 */
 &trackball_listener {
-    input-processors = <&aml_threshold 4 10000>;
+    input-processors = <&zip_temp_layer 4 10000>;
 };
 
-/* 誤爆対策＋非マウスキーで即解除 */
-/*
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
-    excluded-positions = <18 19 20 10 22 34>;
+    excluded-positions = <8 9 18 19 20 10 22 34>;
 };
-*/
