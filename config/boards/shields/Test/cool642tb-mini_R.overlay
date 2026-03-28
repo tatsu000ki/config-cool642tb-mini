@@ -21,6 +21,15 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };
+
+    aml_threshold: aml_threshold {
+        compatible = "zmk,input-processor-temp-layer-threshold";
+        #input-processor-cells = <2>;
+        threshold = <20>;
+        reset-timeout-ms = <200>;
+        require-prior-idle-ms = <200>;
+        excluded-positions = <8 9 18 19 20 10 22 34>;
+    };
 };
 
 &pinctrl {
@@ -67,10 +76,5 @@
 
 /* トラボ動作でMOUSE(=4)を一定時間有効化 */
 &trackball_listener {
-    input-processors = <&zip_temp_layer 4 10000>;
-};
-
-&zip_temp_layer {
-    require-prior-idle-ms = <200>;
-    excluded-positions = <8 9 18 19 20 10 22 34>;
+    input-processors = <&aml_threshold 4 10000>;
 };
