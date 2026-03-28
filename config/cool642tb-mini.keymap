@@ -309,7 +309,7 @@
 &trans      &trans     &trans         &trans     &trans             &trans      &trans  &trans                                                               &kp LS(INTERNATIONAL_1)
             >;
 
-            sensor-bindings = <&inc_dec_kp KP(C_VOLUME_DOWN) KP(C_VOLUME_UP)>;
+            sensor-bindings = <&inc_dec_kp LC(C_VOLUME_DOWN) LC(C_VOLUME_UP)>;
         };
 
         ARROW {
