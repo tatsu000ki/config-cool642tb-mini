@@ -254,15 +254,19 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MT_EXIT_AML_TP170";
             bindings = <&kp>, <&kp_exit_AML>;
+
             #binding-cells = <2>;
-            
+
             // これが重要！
-            flavor = "balanced"; 
-            
+
+            flavor = "balanced";
+
             // 判定時間を少し短くして、キビキビ動くようにします
-            tapping-term-ms = <200>; 
-            
+
+            tapping-term-ms = <200>;
+
             // 連続でCtrlを使いたい時のための猶予（お好みで150〜200）
+
             quick-tap-ms = <175>;
         };
 
@@ -316,7 +320,7 @@
 &trans   &trans  &trans   &trans  &trans   &trans             &kp PERIOD  &kp N0                             &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         NUM {
@@ -327,7 +331,7 @@
 &trans      &trans     &trans         &trans     &trans             &trans          &trans  &trans                                                               &kp LS(INTERNATIONAL_1)
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOLUME_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         ARROW {
@@ -338,7 +342,7 @@
 &kp N0                   &kp N0        &kp DOT       &trans        &trans             &kp ENTER       &trans    &trans                                                            &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(C_VOLUME_DOWN) LC(C_VOLUME_UP)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         MOUSE {
